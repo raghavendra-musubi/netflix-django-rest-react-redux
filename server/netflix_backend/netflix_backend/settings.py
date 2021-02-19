@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'auth_api.apps.AuthApiConfig',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'djoser',
 ]
 
 MIDDLEWARE = [
@@ -90,6 +94,27 @@ DATABASES = { # Edit the DATABASES part to the following
         'PORT': '3306',
     }
 }
+
+# Rest Framework Settings
+# https://djoser.readthedocs.io/en/latest/authentication_backends.html
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        # 'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+}
+
+# DJOSER Settings 
+# https://djoser.readthedocs.io/en/latest/settings.html#
+
+# DJOSER = {
+#     'LOGIN_FIELD': 'email',
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
