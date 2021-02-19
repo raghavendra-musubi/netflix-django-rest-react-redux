@@ -6,6 +6,8 @@
         "markdown",
         "latex",
         "plaintext",
-        "yaml"
-    ]
+        "yaml",
+        "python"
+    ],
+    "python.formatting.provider": "yapf"
 }
