@@ -10,9 +10,7 @@ class Movie(models.Model):
         (4, 'Horror'),
         (5, 'Comedy'),
         (6, 'Musical'),
-        (7, 'Romance'),
-        (8, 'Drama'),
-        (9, 'Fantasy'),
+        (7, 'Romance')
     ]
 
     name = models.CharField(max_length=20, null=False, blank=False)
