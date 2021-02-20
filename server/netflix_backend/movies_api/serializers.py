@@ -8,6 +8,7 @@ class MovieSerializer(serializers.ModelSerializer):
         fields = (
             'id',
             'name',
+            'link',
             'description',
             'category_id',
             'image_path',
