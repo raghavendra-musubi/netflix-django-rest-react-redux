@@ -3,8 +3,8 @@ services:
   django_dev_env:
     image: python:latest
     container_name: django-docker
-    entrypoint: /bin/bash
     working_dir: /home/app
+    command: sh -c "cd /home/app/ && pip install -r requirements.txt && cd /home/app/netflix_backend && python manage.py runserver 0.0.0.0:8000"
     ports:
       - 5000:8000
     volumes: 
