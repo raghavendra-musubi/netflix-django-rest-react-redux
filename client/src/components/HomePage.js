@@ -19,7 +19,7 @@ function HomePage({history}) {
 
               <p> Watch anywhere. Cancel anytime.</p>
 
-              <button type="submit" class="btn btn-danger" onClick={() => history.push('/register-user') }>
+              <button type="submit" className="btn btn-danger" onClick={() => history.push('/register-user') }>
                 Sign Up Now
               </button>
             </div>
