@@ -59,4 +59,15 @@ code {
 .movie-tile {
   min-width: 25%;
   font-size: 10pt;
+  cursor: pointer;
+}
+
+.movie-tile:hover {
+  border: 5px red solid;
+  transform: scale(1.1);
+}
+
+.movie-detail {
+  position:relative;
+  top: 10vh;
 }

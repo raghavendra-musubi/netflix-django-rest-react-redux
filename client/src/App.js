@@ -22,7 +22,7 @@ function App() {
         <Route path="/login-user" component={UserLogin} />
         <Route path="/logout-user" component={UserLogout} />
         <Route exact path="/user-dashboard" component={UserDashboard} />
-        <Route path="/movie-detail" component={MovieDetail} />
+        <Route path="/movie-detail/:movieID" component={MovieDetail} />
       </Switch>
     </div>
   );
