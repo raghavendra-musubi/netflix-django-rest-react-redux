@@ -55,3 +55,8 @@ code {
   overflow: scroll;
   max-height: 80vh;
 }
+
+.movie-tile {
+  min-width: 25%;
+  font-size: 10pt;
+}
