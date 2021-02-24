@@ -1,8 +1,27 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import { withRouter } from "react-router-dom";
+import MovieDirectory from "./MovieDirectory";
 
 function UserDashboard({ history }) {
-  console.log(sessionStorage.getItem("____"));
+  //   console.log(sessionStorage.getItem("____"));
+
+  const [allMovies, setAllMovies] = useState([]);
+
+  const getMovieCatalog = async () => {
+    const response = await fetch("http://localhost:5000/movies/", {
+      method: "GET",
+      headers: { Authorization: `Token ${sessionStorage.getItem("____")}` },
+    });
+
+    const allMoviesTemp = await response.json();
+
+    setAllMovies(allMoviesTemp);
+    // console.log('LOG 5: ', allMovies)
+  };
+
+  useEffect(() => {
+    getMovieCatalog();
+  }, []);
 
   return (
     <Fragment>
@@ -18,7 +37,9 @@ function UserDashboard({ history }) {
             Sign Out{" "}
           </button>
 
-          <div id="center" className="container"></div>
+          <div id="movie-directory" className="container my-5">
+            <MovieDirectory allMovies={allMovies} />
+          </div>
         </div>
       </div>
     </Fragment>

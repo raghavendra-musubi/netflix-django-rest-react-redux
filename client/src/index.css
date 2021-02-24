@@ -37,13 +37,21 @@ code {
   position: absolute;
   top: 50vh;
   left: 50vw;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   min-width: 63vw;
 }
 
-#sign-in-button, #log-out-button {
+#sign-in-button,
+#log-out-button {
   position: absolute;
   right: 5%;
   top: 5%;
 }
 
+#movie-directory {
+  position: relative;
+  top: 10vh;
+  overflow-wrap: normal;
+  overflow: scroll;
+  max-height: 80vh;
+}
